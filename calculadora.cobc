@@ -1,0 +1,38 @@
+IDENTIFICATION DIVISION.
+PROGRAM-ID. calculator.
+DATA DIVISION.
+    WORKING-STORAGE SECTION.
+        01 n1 comp-2.
+        01 n2 comp-2.
+        01 str PIC X(1).
+PROCEDURE DIVISION.
+    restart.
+    DISPLAY "Digite um numero: ".
+    ACCEPT n1.
+    loop.
+    DISPLAY "Digite a operação: ".
+    ACCEPT str.
+    IF(str='$') then
+        stop run
+    else
+        IF(str='z') then
+            go to restart
+    else
+
+        DISPLAY "Digite um numero: ".
+        ACCEPT n2.
+        IF(str='*') then
+            MULTIPLY n2 BY n1
+        else
+            IF(str='/') then
+                DIVIDE n1 BY n2 GIVING n1
+        else
+            IF(str='+') then
+                ADD n1 n2 GIVING n1
+        else
+            IF(str='-') then
+                SUBTRACT n2 FROM n1.
+
+    DISPLAY "Resultado = ",n1.
+    go to loop.
+STOP RUN.
