@@ -7,10 +7,10 @@ DATA DIVISION.
         01 str PIC X(1).
 PROCEDURE DIVISION.
     restart.
-    DISPLAY "Digite um numero: ".
+    DISPLAY "Digite um numero:".
     ACCEPT n1.
     loop.
-    DISPLAY "Digite a operação: ".
+    DISPLAY "Digite a operação:".
     ACCEPT str.
     IF(str='$') then
         stop run
